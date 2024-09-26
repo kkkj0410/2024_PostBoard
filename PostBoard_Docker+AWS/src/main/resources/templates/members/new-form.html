@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>회원가입</h1>
+    <form action = "" th:action th:object = "${member}" method = "post">
+        <div>
+            <label>Id</label>
+            <input type = "text" id = "loginId" th:field="${member.loginId}">
+        </div>
+        <div>
+            <label>name</label>
+            <input type = "text" id = "name" th:field="${member.name}">
+        </div>
+        <button onclick = "location.href = 'main-form.html'">제출</button>
+    </form>
+</body>
+</html>

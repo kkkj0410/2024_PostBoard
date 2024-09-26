@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div>
+        <table>
+            <thead>
+                <tr>
+                    <th>제목</th>
+                    <th>내용</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr th:each = "post : ${postList}">
+                    <td>
+                        <a th:href = "@{/edit-form/{postId}(postId=${post.id})}" th:text = "${post.title}"></a>
+                    </td>
+                    <td>
+                        <a th:text = "${post.content}"></a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <a href = "http://localhost:8080/">메인</a>
+    </div>
+</body>
+</html>
