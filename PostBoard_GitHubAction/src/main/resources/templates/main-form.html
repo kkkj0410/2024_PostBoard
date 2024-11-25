@@ -1,0 +1,61 @@
+
+
+<!--<div>-->
+<!--    <table class="table">-->
+<!--        <thead>-->
+<!--        <tr>-->
+<!--            <th th:text="#{label.item.id}">ID</th>-->
+<!--            <th th:text="#{label.item.itemName}">상품명</th>-->
+<!--            <th th:text="#{label.item.price}">가격</th>-->
+<!--            <th th:text="#{label.item.quantity}">수량</th>-->
+<!--        </tr>-->
+<!--        </thead>-->
+<!--        <tbody>-->
+<!--        <tr th:each="item : ${items}">-->
+<!--            <td><a href="item.html" th:href="@{/items/{itemId}(itemId=${item.id})}" th:text="${item.id}">회원id</a></td>-->
+<!--            <td><a href="item.html" th:href="@{|/items/${item.id}|}" th:text="${item.itemName}">상품명</a></td>-->
+<!--            <td th:text="${item.price}">10000</td>-->
+<!--            <td th:text="${item.quantity}">10</td>-->
+<!--        </tr>-->
+<!--        </tbody>-->
+<!--    </table>-->
+<!--</div>-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div>
+        <table>
+            <thead>
+                <tr>
+                    <th> 작성자 </th>
+                    <th> 제목 </th>
+                    <th> 내용 </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each = "post : ${posts}">
+                    <td>
+                        <a th:text = "${post.member.name}"></a>
+                    </td>
+                    <td>
+                        <a th:text = "${post.title}"></a>
+                    </td>
+                    <td>
+                        <a th:text = "${post.content}"></a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+
+<a href = "http://localhost:8080/members/new-form">회원가입</a>
+<a href = "http://localhost:8080/members/login">로그인</a>
+<a href = "http://localhost:8080/post-form">글 개시</a>
+    <a href = "http://localhost:8080/postList-form">내 글</a>
+</body>
+</html>

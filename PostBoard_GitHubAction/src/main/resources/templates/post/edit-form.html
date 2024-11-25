@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>글 수정</h1>
+
+<form th:action = "@{{postId}(postId=${post.id})}" th:object = "${post}" method = "post">
+    <textarea th:field = "*{title}" th:text = "${title}"></textarea>
+    <textarea th:field = "*{content}" th:text = "${content}"></textarea>
+    <button>수정</button>
+</form>
+
+<form th:action = "@{delete/{postId}(postId=${post.id})}" th:object = "${post}" method = "post">
+    <button>삭제</button>
+</form>
+</body>
+</html>

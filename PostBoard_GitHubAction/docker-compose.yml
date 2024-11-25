@@ -1,0 +1,21 @@
+services:
+  mysqldb:
+    image: mysql:8.0.32
+    restart: always
+    environment:
+      MYSQL_DATABASE: yogoyogu
+      MYSQL_ROOT_PASSWORD: root
+    ports:
+      - 3306:3306
+
+  backend:
+    build: .
+    restart: always
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysqldb:3306/yogoyogu
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD: root
+    ports:
+      - 8080:8080
+    depends_on:
+      - mysqldb
